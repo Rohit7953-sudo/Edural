@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
     const loggedIn = localStorage.getItem("isAdminLoggedIn");
     if (!loggedIn || loggedIn !== "true") {
         alert("Access denied! Please log in first.");
-        window.location.href = "../login/login.html";
+        window.location.href = "./login.html";
         return;
     }
 
@@ -51,8 +51,8 @@ window.addEventListener("load", () => {
 
             sectionTitle.textContent =
                 tab.dataset.target === "students"
-                    ? "📊 Student Overview"
-                    : "📘 Course Insights";
+                    ? "Student Overview"
+                    : "Course Insights";
 
             currentTab = tab.dataset.target;
             updateStats();
@@ -112,7 +112,7 @@ window.addEventListener("load", () => {
             }
         });
 
-        console.log("Form submitted ✅");
+        console.log("Form submitted ");
 
         // ====== STUDENT LOGIC ======
         if (currentTab === "students") {
@@ -296,7 +296,7 @@ if (logoutBtn) {
       // localStorage.removeItem("courses");
 
       // Redirect to login page
-      window.location.href = "../home/index.html";
+      window.location.href = "./index.html";
     }
   });
 }
