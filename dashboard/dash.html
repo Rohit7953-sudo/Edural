@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduPro Admin Dashboard</title>
+  <link rel="stylesheet" href="dash.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">EduPro<span class="dot">.</span> Dashboard</div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </nav>
+
+  <!-- Section Title -->
+  <header class="section-header">
+    <h2 id="sectionTitle">📊 Student Overview</h2>
+  </header>
+
+  <!-- Mini Stats -->
+  <section class="mini-stats" id="studentStats">
+    <div class="stat-card"><h4>Total Students</h4><p id="totalStudents">0</p></div>
+    <div class="stat-card"><h4>Active Students</h4><p id="activeStudents">0</p></div>
+    <div class="stat-card"><h4>Success Rate</h4><p>98%</p></div>
+    <div class="stat-card"><h4>Average Score</h4><p>87%</p></div>
+  </section>
+
+  <section class="mini-stats" id="courseStats" style="display:none;">
+    <div class="stat-card"><h4>Total Courses</h4><p id="totalCourses">0</p></div>
+    <div class="stat-card"><h4>Active Courses</h4><p id="activeCourses">0</p></div>
+    <div class="stat-card"><h4>Rank Holders</h4><p>400+</p></div>
+    <div class="stat-card"><h4>Top Rating</h4><p>4.9★</p></div>
+  </section>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" data-target="students">👩‍🎓 Students</button>
+    <button class="tab" data-target="courses">📘 Courses</button>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button id="addBtn" class="add-btn">+ Add Record</button>
+  </div>
+
+  <!-- Main Content -->
+  <main class="dashboard">
+    <section id="students" class="section">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Course</th><th>Email</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="studentTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="courses" class="section" style="display:none;">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr><th>Course</th><th>Duration</th><th>Price</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="courseTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2 id="modalTitle">Add Record</h2>
+    <form id="modalForm" novalidate>
+
+      <!-- Student Fields -->
+      <div id="studentFields">
+        <label for="studentName">Student Name</label>
+        <input id="studentName" name="studentName" type="text" placeholder="Enter student name" required />
+
+        <label for="studentCourse">Course Enrolled</label>
+        <select id="studentCourse" name="studentCourse"></select>
+
+        <label for="studentEmail">Email</label>
+        <input id="studentEmail" name="studentEmail" type="email" placeholder="Enter email" required />
+      </div>
+
+      <!-- Course Fields -->
+      <div id="courseFields">
+        <label for="courseName">Course Name</label>
+        <input id="courseName" name="courseName" type="text" placeholder="Enter course name" required />
+
+        <label for="courseDuration">Duration</label>
+        <input id="courseDuration" name="courseDuration" type="text" placeholder="e.g. 6 months" required />
+
+        <label for="coursePrice">Price</label>
+        <input id="coursePrice" name="coursePrice" type="number" placeholder="e.g. 4500" required />
+
+        <label for="courseStatus">Status</label>
+        <select id="courseStatus" name="courseStatus" required>
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+      </div>
+
+      <button type="submit" class="save-btn">Save</button>
+      <button type="button" id="closeModal" class="cancel-btn">Cancel</button>
+    </form>
+  </div>
+</div>
+
+
+  <footer>
+    <p>© 2026 EduPro Learning Platform — Admin Dashboard</p>
+  </footer>
+
+  <script src="dash.js"></script>
+</body>
+</html>
