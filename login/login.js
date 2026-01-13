@@ -16,3 +16,6 @@ loginForm.addEventListener("submit", (e) => {
     errorMsg.textContent = "Invalid username or password!";
   }
 });
+(function(){
+  alert('user_name is : admin \n password is : 1234 \n kindly go throuh with it')
+})()
