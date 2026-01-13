@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login - EduPro</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">EduPro<span class="dot">.</span></div>
+    <a href="../home/index.html" class="back-link">← Back to Home</a>
+  </nav>
+
+  <!-- Login Section -->
+  <section class="login-section">
+    <div class="login-box">
+      <h2>Admin Login</h2>
+      <p class="subtext">Please enter your credentials to access the dashboard</p>
+
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter username" required />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" required />
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+        <p id="errorMsg" class="error-msg"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 EduPro Learning Platform</p>
+  </footer>
+
+  <script src="login.js"></script>
+</body>
+</html>
